@@ -1,0 +1,7 @@
+.icecream-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f8f8f8;
+}

@@ -1,0 +1,34 @@
+.icecream-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  margin: 10px;
+  background-color: #fff;
+}
+
+.icecream-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.icecream-item h2 {
+  font-family: 'Pacifico', cursive;
+  color: #ffadad;
+}
+
+.icecream-item p {
+  font-family: 'Arial', sans-serif;
+  color: #666;
+}
+
+
+.icecream-item-link {
+  text-decoration: none;  /* Removes the underline */
+  color: #333;            /* Sets the color of the link text */
+}
+
+.icecream-item-link:hover {
+  text-decoration: none; /* Optional: Adds underline on hover */
+}

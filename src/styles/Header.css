@@ -1,0 +1,30 @@
+.header {
+  background-color: #ffcccb;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.header h1 {
+  margin: 0;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+}
+
+.nav-links {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.nav-link {
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
