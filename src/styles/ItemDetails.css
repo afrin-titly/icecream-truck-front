@@ -51,6 +51,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .quantity-control button {
@@ -92,4 +93,54 @@
 .add-to-cart-button:active {
   background-color: #004494;
   transform: translateY(0);
+}
+
+/* Add this to ItemDetails.css */
+
+/* Style for the admin buttons container */
+.admin-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Base style for admin buttons */
+.admin-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Specific styles for each button */
+.create-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.create-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.edit-button {
+  background-color: #FFC107; /* Amber */
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #ffb300;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #F44336; /* Red */
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
 }

@@ -65,6 +65,8 @@ import './styles/App.css';
 import { FlashMessageProvider } from './contexts/FlashMessageContext';
 import Cart from './components/Cart';
 import { isLoggedIn } from './components/Auth';
+import ItemCreate from './components/ItemCreate';
+import ItemEdit from './components/ItemEdit';
 
 function App() {
   return (
@@ -80,6 +82,8 @@ function App() {
                 <Route path="/login" element={isLoggedIn() ? <Navigate to="/" /> : <Login />} />
                 <Route path="/signup" element={isLoggedIn() ? <Navigate to="/" /> : <Login />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/items/new" element={<ItemCreate />} />
+                <Route path="/items/:id/edit" element={<ItemEdit />} />
                 <Route
                   path="/protected"
                   element={

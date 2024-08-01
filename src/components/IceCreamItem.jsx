@@ -1,19 +1,3 @@
-// import React from 'react';
-// import '../styles/IceCreamItem.css';
-
-// function IceCreamItem({ name, price, flavor, image }) {
-//   return (
-//     <div className="icecream-item">
-//       <img src={image} alt={name} />
-//       <h2>{name}</h2>
-//       <h3>{flavor}</h3>
-//       <p>Price: ¥{price}</p>
-//     </div>
-//   );
-// }
-
-// export default IceCreamItem;
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/IceCreamItem.css';

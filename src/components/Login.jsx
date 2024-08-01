@@ -14,6 +14,7 @@ function Login() {
 
   useEffect(() => {
     if (isLoggedIn()) {
+      navigate(0);
       navigate('/');
     }
   }, [navigate]);
@@ -35,6 +36,7 @@ function Login() {
       });
 
       const data = await response.json();
+      const { message, user } = data
 
       if (!response.ok) {
         const errorData = data.errors;
@@ -42,13 +44,15 @@ function Login() {
       }
 
       const token = response.headers.get('authorization');
-      addMessage(data.message)
+      addMessage(message)
       if (!token) {
         throw new Error('No token found in the response headers');
       }
 
       localStorage.setItem('jwtToken', token);
+      localStorage.setItem('user', JSON.stringify(user));
       navigate('/');
+      navigate(0); // refresh page
     } catch (error) {
       console.error('Error logging in:', error);
       addMessage(error.message);
