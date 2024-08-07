@@ -67,6 +67,8 @@ import Cart from './components/Cart';
 import { isLoggedIn } from './components/Auth';
 import ItemCreate from './components/ItemCreate';
 import ItemEdit from './components/ItemEdit';
+import Management from './components/Management';
+import Items from './components/management/Items';
 
 function App() {
   return (
@@ -84,6 +86,8 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/items/new" element={<ItemCreate />} />
                 <Route path="/items/:id/edit" element={<ItemEdit />} />
+                <Route path="/management" element={<Management />} />
+                <Route path="/management/items" element={<Items />} />
                 <Route
                   path="/protected"
                   element={

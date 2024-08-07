@@ -11,7 +11,6 @@
 //       .then((response) => response.json())
 //       .then((data) => {
 //         setIceCreams(data);
-//         console.log(data)
 //         setLoading(false);
 //       })
 //       .catch((error) => {
@@ -29,13 +28,13 @@
 //       {iceCreams.map((icecream) => (
 //         <IceCreamItem
 //           key={icecream.id}
+//           id={icecream.id}
 //           name={icecream.name}
 //           price={icecream.price}
 //           flavor={icecream.flavor?.name}
 //           image={icecream.image}
 //         />
-//       ))
-//       }
+//       ))}
 //     </div>
 //   );
 // }
@@ -43,26 +42,13 @@
 // export default IceCreamList;
 
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import IceCreamItem from './IceCreamItem';
+import useIceCreams from './hooks/useIceCreams';
 import '../styles/IceCreamList.css';
 
 function IceCreamList() {
-  const [iceCreams, setIceCreams] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('http://localhost:3000/items')
-      .then((response) => response.json())
-      .then((data) => {
-        setIceCreams(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching ice cream data:', error);
-        setLoading(false);
-      });
-  }, []);
+  const { iceCreams, loading } = useIceCreams();
 
   if (loading) {
     return <p>Loading...</p>;

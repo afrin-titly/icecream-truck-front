@@ -28,7 +28,6 @@ function ItemForm({ item, categories, flavors, onSubmit, formType }) {
 
     onSubmit(itemData)
       .then(() => {
-        // addMessage(formType === 'create' ? "Item created successfully!" : "Item updated successfully!");
         navigate('/');
       })
       .catch((error) => {
@@ -75,7 +74,7 @@ function ItemForm({ item, categories, flavors, onSubmit, formType }) {
           ))}
         </select>
       </div>
-      {/* <div className="form-group">
+      <div className="form-group">
         <label htmlFor="flavor">Flavor</label>
         <select
           id="flavor"
@@ -89,7 +88,7 @@ function ItemForm({ item, categories, flavors, onSubmit, formType }) {
             </option>
           ))}
         </select>
-      </div> */}
+      </div>
       <div className="form-group">
         <label htmlFor="stock">Stock</label>
         <input
@@ -108,3 +107,4 @@ function ItemForm({ item, categories, flavors, onSubmit, formType }) {
 }
 
 export default ItemForm;
+

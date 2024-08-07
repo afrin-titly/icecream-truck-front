@@ -90,7 +90,7 @@ function ItemDetails() {
           <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
         </div>
         <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
-        {isAdmin() && (
+        {isAdmin() && isLoggedIn() && (
           <div className="admin-buttons">
             <button className="create-button" onClick={handleCreate}>Create</button>
             <button className="edit-button" onClick={handleEdit}>Edit</button>

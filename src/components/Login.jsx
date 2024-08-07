@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useCart } from '../contexts/CartContext';
 import { useFlashMessage } from '../contexts/FlashMessageContext';
 import '../styles/Auth.css';
 import { isLoggedIn } from './Auth';
@@ -9,10 +8,11 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { login } = useCart();
   const addMessage = useFlashMessage();
 
+  console.log("comes here----333---");
   useEffect(() => {
+    console.log("comes here-------");
     if (isLoggedIn()) {
       navigate(0);
       navigate('/');

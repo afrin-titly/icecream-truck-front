@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemForm from './ItemForm';
+import { isLoggedIn, isAdmin, isTokenExpired } from './Auth';
+import { useNavigate } from 'react-router-dom';
 
 function ItemEdit() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [categories, setCategories] = useState([]);
   const [flavors, setFlavors] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(`hellooo----${isLoggedIn()}------${isAdmin()}----`)
+    if (!isLoggedIn() || !isAdmin() || isTokenExpired()) {
+      navigate(0);
+      navigate('/login');
+    }
+  }, [navigate]);
 
   useEffect(() => {
     fetch(`http://localhost:3000/items/${id}`)
