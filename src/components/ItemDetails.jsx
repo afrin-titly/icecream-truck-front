@@ -37,37 +37,6 @@ function ItemDetails() {
     addMessage("Item added to cart!");
   };
 
-  const handleCreate = () => {
-    navigate('/items/new');
-  };
-
-  const handleEdit = () => {
-    navigate(`/items/${id}/edit`);
-  };
-
-  const handleDelete = () => {
-    fetch(`http://localhost:3000/items/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `${localStorage.getItem('jwtToken')}`
-      }
-    })
-      .then((response) => {
-        if (response.ok) {
-          navigate('/');
-          addMessage("Item deleted successfully");
-        } else {
-          console.error('Error deleting item');
-          addMessage("Error deleting item");
-        }
-      })
-      .catch((error) => {
-        console.error('Error deleting item:', error);
-        addMessage("Error deleting item");
-      });
-  };
-
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -90,13 +59,6 @@ function ItemDetails() {
           <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
         </div>
         <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
-        {isAdmin() && isLoggedIn() && (
-          <div className="admin-buttons">
-            <button className="create-button" onClick={handleCreate}>Create</button>
-            <button className="edit-button" onClick={handleEdit}>Edit</button>
-            <button className="delete-button" onClick={handleDelete}>Delete</button>
-          </div>
-        )}
       </div>
     </div>
   );

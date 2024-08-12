@@ -11,11 +11,11 @@ function Signup() {
   const navigate = useNavigate();
   const addMessage = useFlashMessage();
 
-  useEffect(() => {
-    if (isLoggedIn()) {
-      navigate('/');
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (isLoggedIn()) {
+  //     navigate('/');
+  //   }
+  // }, [navigate]);
 
   const handleSignup = async (e) => {
     e.preventDefault();

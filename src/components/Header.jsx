@@ -6,7 +6,6 @@ import Logout from './Logout';
 
 function Header() {
 
-  console.log(`-----${isTokenExpired()} ---- ${isLoggedIn()}`)
   return (
     <header className="header">
       <Link to="/" className="home-link nav-link"><h1>Welcome to the Ice Cream Truck</h1></Link>

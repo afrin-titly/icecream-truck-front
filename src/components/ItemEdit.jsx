@@ -3,16 +3,16 @@ import { useParams } from 'react-router-dom';
 import ItemForm from './ItemForm';
 import { isLoggedIn, isAdmin, isTokenExpired } from './Auth';
 import { useNavigate } from 'react-router-dom';
+import useCategories from './hooks/useCategories';
 
 function ItemEdit() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
-  const [categories, setCategories] = useState([]);
+  const { categories, categoriesLoading } = useCategories();
   const [flavors, setFlavors] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(`hellooo----${isLoggedIn()}------${isAdmin()}----`)
     if (!isLoggedIn() || !isAdmin() || isTokenExpired()) {
       navigate(0);
       navigate('/login');
@@ -24,16 +24,6 @@ function ItemEdit() {
       .then((response) => response.json())
       .then((data) => setItem(data))
       .catch((error) => console.error('Error fetching item:', error));
-
-    fetch('http://localhost:3000/categories', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `${localStorage.getItem('jwtToken')}`
-      }
-    })
-      .then((response) => response.json())
-      .then((data) => setCategories(data))
-      .catch((error) => console.error('Error fetching categories:', error));
 
     fetch('http://localhost:3000/flavors', {
       headers: {

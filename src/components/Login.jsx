@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFlashMessage } from '../contexts/FlashMessageContext';
 import '../styles/Auth.css';
-import { isLoggedIn } from './Auth';
+import { isLoggedIn, isTokenExpired } from './Auth';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -10,14 +10,12 @@ function Login() {
   const navigate = useNavigate();
   const addMessage = useFlashMessage();
 
-  console.log("comes here----333---");
-  useEffect(() => {
-    console.log("comes here-------");
-    if (isLoggedIn()) {
-      navigate(0);
-      navigate('/');
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (isLoggedIn()) {
+  //     navigate(0);
+  //     navigate('/');
+  //   }
+  // }, [navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

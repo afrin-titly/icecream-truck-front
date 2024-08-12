@@ -1,15 +1,18 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useCart } from '../contexts/CartContext';
+import { isLoggedIn, isTokenExpired, isAdmin } from './Auth';
+import Login from './Login';
 
-const ProtectedRoute = ({ children }) => {
-  const { isLoggedIn } = useCart();
-
-  if (!isLoggedIn) {
-    return <Navigate to="/login" />;
+const ProtectedRoute = ({ element, adminOnly = false }) => {
+  if (!isLoggedIn() || isTokenExpired()) {
+    return <Login />;
   }
 
-  return children;
+  if (adminOnly && !isAdmin()) {
+    return <div>You do not have permission to view this page.</div>;
+  }
+
+  return element;
 };
 
 export default ProtectedRoute;

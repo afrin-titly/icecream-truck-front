@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/ItemForm.css';
 import { useFlashMessage } from "../contexts/FlashMessageContext";
@@ -28,7 +28,7 @@ function ItemForm({ item, categories, flavors, onSubmit, formType }) {
 
     onSubmit(itemData)
       .then(() => {
-        navigate('/');
+        navigate('/management/items');
       })
       .catch((error) => {
         console.error('Error submitting form:', error);

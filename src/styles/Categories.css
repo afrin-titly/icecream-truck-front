@@ -1,0 +1,119 @@
+/* styles/Categories.css */
+
+.categories-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.categories-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.categories-container button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.categories-container button:hover {
+  background-color: #0056b3;
+}
+
+.categories-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.categories-table th,
+.categories-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.categories-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.categories-table td {
+  vertical-align: middle;
+}
+
+.categories-table input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.categories-table button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.categories-table button:hover {
+  background-color: #218838;
+}
+
+.categories-table .edit-button {
+  background-color: #ffc107;
+  color: black;
+}
+
+.categories-table .edit-button:hover {
+  background-color: #e0a800;
+}
+
+.categories-table .delete-button {
+  background-color: #dc3545;
+}
+
+.categories-table .delete-button:hover {
+  background-color: #c82333;
+}
+
+.create-category {
+  margin-top: 20px;
+}
+
+.create-category input {
+  padding: 8px;
+  width: 200px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.create-category button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-category button:hover {
+  background-color: #218838;
+}
