@@ -18,7 +18,7 @@ function Header() {
         <nav className="nav-links">
           <Link to="/cart" className="nav-link">Cart</Link>
           <Logout />
-          {isAdmin() && <Link to="/management" className="nav-link">Management</Link>}
+          {isAdmin() && !isTokenExpired() && <Link to="/management" className="nav-link">Management</Link>}
         </nav>
       )}
     </header>

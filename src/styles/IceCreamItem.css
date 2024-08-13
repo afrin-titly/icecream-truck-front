@@ -5,10 +5,11 @@
   text-align: center;
   margin: 10px;
   background-color: #fff;
+  width: 250px;
 }
 
 .icecream-item img {
-  width: 100%;
+  width: 30%;
   height: auto;
   border-radius: 8px;
 }

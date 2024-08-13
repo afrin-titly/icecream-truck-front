@@ -1,47 +1,52 @@
 .management-screen {
-  padding: 20px;
+  padding: 40px;
   text-align: center;
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 50px auto;
 }
 
 .management-screen h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4CAF50; /* Green color for title */
 }
 
 .management-options {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .management-button {
   background-color: #4CAF50; /* Green background */
   border: none;
   color: white; /* White text */
-  padding: 10px 20px;
+  padding: 12px 25px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 200px;
 }
 
 .management-button:hover {
   background-color: #45a049; /* Darker green on hover */
-}
-
-.management-link {
-  text-decoration: none;
-}
-
-.management-button:focus {
-  outline: none; /* Remove default focus outline */
+  transform: scale(1.05);
 }
 
 .management-button:active {
   background-color: #3e8e41; /* Even darker green when pressed */
+  transform: scale(0.98);
+}
+
+.management-link {
+  text-decoration: none;
 }

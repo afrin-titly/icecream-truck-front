@@ -10,7 +10,7 @@ export const isAdmin = () => {
     return false;
   }
   const user = JSON.parse(localStorage.getItem('user'));
-  return user.admin === "1" ? true : false
+  return user.admin === true ? true : false
 }
 
 export const isTokenExpired = () => {

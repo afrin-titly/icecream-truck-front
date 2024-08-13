@@ -3,7 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 import '../styles/ItemDetails.css';
 import { useFlashMessage } from "../contexts/FlashMessageContext";
-import { isLoggedIn, isAdmin } from './Auth';
+import { isLoggedIn } from './Auth';
+import placeholder from '../assets/placeholder.avif'
 
 function ItemDetails() {
   const { id } = useParams();
@@ -47,7 +48,7 @@ function ItemDetails() {
 
   return (
     <div className="item-details">
-      <img src={item.image} alt={item.name} />
+      <img src={placeholder} alt={item.name} />
       <div className="details">
         <h2>{item.name}</h2>
         <h3>{item.flavor?.name}</h3>
